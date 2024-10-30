@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Americanas - Passou, cestou :)</title>
+
+    <!-- Estilos principais simplificados -->
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f1f1f1;
+        }
+        header {
+            background-color: #f1f1f1;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #E60014;
+            display: flex;
+            justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+            align-items: center; /* Centraliza verticalmente */
+            padding: 10px 20px;
+        }
+        .logo {
+            height: 100px; /* Altura do logo */
+            width: auto; /* Mantém a proporção */
+            margin-right: 20px; /* Espaço entre logo e links */
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #f1f1f1;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        footer {
+            background-color: #E60014;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+         /* Estilo para o dropdown em formato de caderno */
+         .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-title {
+            padding: 12px 15px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        
+        .dropdown-section {
+            display: none;
+            padding-left: 15px;
+            background-color: #fdfdfd;
+        }
+
+        /* Estilo dos itens da lista dentro da seção */
+        .dropdown-section a {
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px dashed #bbb; /* Linha pontilhada */
+            background-color: #fff;
+        }
+        .dropdown-section a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Expansão das seções ao passar o mouse */
+        .dropdown-title:hover + .dropdown-section {
+            display: block;
+        }
+         /* Barra de pesquisa */
+         .search-bar {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+         }
+         .search-input {
+            padding: 8px 8px 8px 35px;  /* Espaçamento para o ícone */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/54/54481.png'); /* Ícone de lupa */
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 8px center; /* Posição do ícone */
+        }
+        .search-button {
+            padding: 8px;
+            background-color: #E60014;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-button:hover {
+            background-color: #cc0012;
+        }
+        section {
+            margin: 20px 0; /* Margem acima e abaixo das seções */
+            padding: 20px; /* Espaçamento interno das seções */
+            background-color: white; /* Cor de fundo das seções */
+            border-radius: 5px; /* Cantos arredondados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+        }
+        h2 {
+            margin-top: 0; /* Remove a margem superior do título */
+        }
+        /* Estilos para os formulários */
+        form {
+            display: flex; /* Flexbox para os formulários */
+            flex-direction: column; /* Alinha os campos verticalmente */
+        }
+        /* Estilos para os campos de entrada */
+        input[type="text"], input[type="email"], input[type="password"] {
+            margin-bottom: 10px; /* Margem abaixo de cada campo */
+            padding: 10px; /* Espaçamento interno dos campos */
+            border: 1px solid #ccc; /* Borda padrão dos campos */
+            border-radius: 5px; /* Cantos arredondados dos campos */
+        }
+        /* Estilos para os botões */
+        button {
+            padding: 10px; /* Espaçamento interno do botão */
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove a borda padrão */
+            border-radius: 5px; /* Cantos arredondados do botão */
+            cursor: pointer; /* Muda o cursor ao passar o mouse */
+        }
+        button:hover {
+            background-color: #0056b3; /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da Página -->
+    <header>
+        <h1>Encontre Tudo o Que Precisa em um Só Lugar :)</h1>
+    </header>
+
+    <!-- Barra de Navegação com Logotipo à Esquerda -->
+    <nav>
+        <a href="/" title="americanas">
+                <a href="index.html">
+                <img src="logo.png" alt="Logo da Loja" class="logo">
+                </a>
+
+        </a>
+        <!-- Barra de Pesquisa ao lado de "Todos os Departamentos" -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Pesquisar...">
+            <button class="search-button">Buscar</button>
+        </div>
+        <div class="dropdown">
+            <a href="#todos os departamentos">Todos os Departamentos</a>
+            <div class="dropdown-content">
+                
+                <!-- Categoria Eletrônicos -->
+                <div class="dropdown-title" onclick="toggleSection('eletronicos')">Eletrônicos</div>
+                <div id="eletronicos" class="dropdown-section">
+                    <a href="#smartphones">Smartphones</a>
+                    <a href="#tvs">TVs</a>
+                    <a href="#notebooks">Notebooks</a>
+                </div>
+                
+                <!-- Categoria Moda -->
+                <div class="dropdown-title" onclick="toggleSection('moda')">Moda</div>
+                <div id="moda" class="dropdown-section">
+                    <a href="#roupas">Roupas</a>
+                    <a href="#calcados">Calçados</a>
+                    <a href="#acessorios">Acessórios</a>
+                </div>
+                
+                <!-- Categoria Casa -->
+                <div class="dropdown-title" onclick="toggleSection('casa')">Casa</div>
+                <div id="casa" class="dropdown-section">
+                    <a href="#moveis">Móveis</a>
+                    <a href="#decoracao">Decoração</a>
+                    <a href="#eletrodomesticos">Eletrodomésticos</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#aplicativo">Baixe o App</a>
+        <a href="#ofertas">Ofertas do Dia</a>
+        <a href="#contato">Contato</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="favoritos.html">Favoritos</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+        
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section id="home">
+            <h2>Bem-vindo à Americanas</h2>
+            <p>Encontre tudo o que precisa, com preços imperdíveis!</p>
+        </section>
+        
+        <section id="ofertas">
+            <h2>Ofertas Exclusivas</h2>
+            <p>Aproveite as ofertas exclusivas de hoje!</p>
+        </section>
+
+        <section id="contato">
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato para mais informações ou dúvidas.</p>
+            <p>Email: atendimento@americanas.com</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>A Americanas oferece uma ampla variedade de produtos e promoções para você economizar e aproveitar o melhor do mercado!</p>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Americanas - Passou, cestou :) Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Função para expandir/retrair seções ao clicar
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            if (section.style.display === "block") {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
