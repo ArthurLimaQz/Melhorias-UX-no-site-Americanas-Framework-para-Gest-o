@@ -1,3 +1,4 @@
+
 /* Variáveis de CSS para personalização */
 :root {
     --main-bg-color: #E60014;
@@ -41,29 +42,36 @@ nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 15px; /* Menos padding para compactar */
     position: relative;
 }
 
 .logo {
-    height: 100px;
+    height: 80px; /* Reduzido para economizar espaço */
     width: auto;
-    margin-right: 20px;
+    margin-right: 15px;
+    box-shadow: none;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
+nav a, #departmentsButton, #auth-buttons, #auth-button{
+    color: rgb(255, 255, 255);
+    margin: 0 8px; /* Menos espaço entre os botões */
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 0.9em;
-    transition: transform 0.2s;
+    font-size: 0.85em; /* Fonte ligeiramente menor */
+    padding: 6px 10px; /* Padding reduzido */
+    transition: background-color 0.2s, transform 0.2s;
+    border-radius: 3px; /* Bordas levemente arredondadas */
 }
-nav a:hover, nav a:focus {
-    color: #f1f1f1;
-    transform: scale(1.1);
-    outline: 2px solid #fff;
+nav a:hover, nav a:focus, #accessibilityButton:hover, #departmentsButton:hover {
+    background-color: #cc0012;
+    outline: none;
+}
+
+nav a.logo-link {
+    box-shadow: none !important; /* Remove qualquer sombra para o link da logo */
+    outline: none !important; /* Remove qualquer contorno */
 }
 
 /* Barra de pesquisa */
@@ -76,44 +84,51 @@ nav a:hover, nav a:focus {
     padding: 8px 8px 8px 35px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 200px;
+    width: 150px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/54/54481.png');
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: right 8px center;
 }
 .search-button {
-    padding: 8px;
+    padding: 8px 12px;
     background-color: var(--main-bg-color);
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s, transform 0.2s; /* Animações Suaves */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para um efeito de profundidade */
 }
 .search-button:hover {
-    background-color: #cc0012;
+    background-color: #cc0012; /* Cor ao passar o mouse */
+    transform: translateY(-2px); /* Eleva o botão ao passar o mouse */
+}
+
+.search-button:focus {
+    outline: none; /* Remove o contorno ao focar no botão */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Adiciona um foco visível */
 }
 
 /* Botão de Acessibilidade */
 .accessibility-button {
-    position: absolute;
-    right: 20px;
-    padding: 8px;
-    background-color: #fff;
-    color: var(--text-color);
+    padding: 10px;
+    background-color: #ffffff;
+    color: #333;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
+    margin-left: auto;
 }
 .accessibility-button:hover, .accessibility-button:focus {
-    background-color: var(--main-bg-color);
+    background-color: #E60014;
     color: #fff;
 }
 
@@ -126,36 +141,72 @@ nav a:hover, nav a:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escurecido */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
-    border-radius: 4px;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     text-align: center;
+    font-size: 1.2em;
+    color: #333;
 }
 
+.modal-content h2 {
+    color: var(--main-bg-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Botões estilizados */
+.modal-content button {
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    background-color: var(--main-bg-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button:hover {
+    background-color: #cc0012;
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Efeitos de transição ao exibir o modal */
 .modal.show {
     display: block;
+    animation: fadeIn 0.4s ease-out; /* Efeito de transição suave */
 }
-
 .close {
-    background-color: var(--main-bg-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 10px;
+    background-color: #888;
+    color: #fff;
+    margin-top: 25px;
+    padding: 12px;
     font-size: 1em;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    font-weight: bold;
 }
 .close:hover {
-    background-color: #cc0012;
+    background-color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Estilos para o modo de alto contraste */
@@ -184,4 +235,204 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+a i {
+    margin-right: 8px; /* Ajuste o valor conforme a quantidade de espaço que você deseja */
+}
+
+button i {
+    margin-right: 8px;
+}
+
+/* Estilos para o botão Todos os Departamentos */
+#departmentsButton {
+    color: white;
+    background-color: var(--main-bg-color);
+    border: none;
+    margin: 0 8px;
+    padding: 6px 10px;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    font-family: 'Poppins', sans-serif; /* Adiciona a fonte Poppins */
+}
+
+#departmentsButton i {
+    margin-right: 5px;
+}
+
+#departmentsButton:hover {
+    background-color: #cc0012;
+}
+
+/* Dropdown Menu para o botão Todos os Departamentos */
+#departmentsDropdown {
+    display: none; /* Escondido por padrão */
+    position: absolute; /* Muda para absolute */
+    top: 100%; /* Alinha logo abaixo do botão */
+    left: 0; /* Alinha à esquerda do botão */
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    z-index: 1;
+}
+
+/* Exibe o dropdown ao passar o mouse no botão ou no dropdown */
+.dropdown:hover #departmentsDropdown {
+    display: block;
+}
+
+#departmentsDropdown a {
+    color: #333;
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+}
+
+#departmentsDropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para as categorias e filtros */
+.category {
+    padding: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.category:hover {
+    background-color: #f1f1f1;
+}
+
+/* Submenu de filtros */
+.filters {
+    display: none;
+    position: absolute;
+    left: 100%; /* Ajuste conforme necessário */
+    top: 0;
+    background-color: #fefefe;
+    min-width: 150px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.filters a {
+    display: block;
+    color: #333;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.filters a:hover {
+    background-color: #E60014;
+    color: #fff;
+}
+
+/* Mostrar menus suspensos ao passar o mouse */
+#departmentsDropdown:hover .filters {
+    display: block;
+}
+
+/* Exibe os filtros ao passar o mouse na categoria */
+.category:hover .filters {
+    display: block;
+}
+
+.auth-buttons {
+    position: relative; /* Para posicionar o modal corretamente */
+    display: inline-block; /* Para que o botão não ocupe a linha inteira */
+}
+
+.auth-button {
+    background-color: transparent; /* Define fundo transparente como os links da navbar */
+    color: white; /* Cor do texto branco */
+    font-family: 'Poppins', sans-serif; /* Mesma fonte dos links */
+    font-size: 1em; /* Ajuste do tamanho da fonte */
+    padding: 0; /* Remove padding adicional */
+    border: none; /* Remove borda */
+    cursor: pointer;
+    transition: color 0.2s; /* Transição suave para a cor */
+}
+
+.auth-button:hover {
+    background-color: #cc0012; /* Cor ao passar o mouse */
+}
+
+.auth-modal {
+    display: none; /* Esconder o modal por padrão */
+    position: absolute; /* Para que o modal seja posicionado em relação ao contêiner */
+    z-index: 1000; /* Para que fique acima de outros elementos */
+    background-color: white; /* Cor de fundo do modal */
+    border: 1px solid #ccc; /* Borda do modal */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno do modal */
+    width: 300px; /* Largura fixa do modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o modal */
+    transition: opacity 0.3s ease; /* Animação para suavizar a entrada */
+}
+
+
+.auth-modal-content {
+    text-align: center;
+}
+
+.auth-modal input {
+    width: 100%; /* Largura total */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-modal button {
+    background-color: var(--main-bg-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-modal button:hover {
+    background-color: #cc0012;
+}
+
+.auth-links {
+    margin-top: 10px;
+}
+
+.auth-links a {
+    display: block; /* Para links empilhados */
+    color: #E60014;
+    text-decoration: none;
+    margin: 5px 0; /* Espaçamento entre links */
+}
+
+.auth-links a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+.auth-buttons:hover .auth-modal,
+.auth-modal:hover {
+    display: block; /* Mostrar o modal quando passar o mouse sobre o botão ou o modal */
+}
+
+.auth-modal input[type="text"], 
+.auth-modal input[type="password"] {
+    width: calc(100% - 20px); /* Para garantir que o campo ocupe 100% da largura menos o padding */
+    padding: 10px; /* Adiciona espaçamento interno */
+    margin: 10px 0; /* Adiciona margem vertical entre os campos */
+    border: 1px solid #ccc; /* Borda dos campos */
+    border-radius: 4px; /* Bordas levemente arredondadas */
 }

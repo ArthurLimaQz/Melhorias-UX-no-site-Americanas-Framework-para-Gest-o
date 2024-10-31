@@ -24,15 +24,64 @@
 
     <!-- Barra de Navegação com Logotipo à Esquerda -->
     <nav role="navigation" aria-label="Main navigation">
-        <a href="/" title="Americanas">
+        <a href="/" title="Americanas" class="logo-link">
             <img src="logo.png" alt="Logo da Loja" class="logo" data-src="logo.png">
         </a>
+    
 
         <!-- Barra de Pesquisa e Links -->
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Pesquisar...">
-            <button class="search-button">Buscar</button>
+            <button class="search-button" type="submit">Buscar</button>
         </div>
+
+    <!-- Botão de Todos os Departamentos -->
+    <div class="dropdown" style="position: relative;">
+        <button id="departmentsButton" class="navbar-button">
+            <i class="fas fa-th"></i> Todos os Departamentos
+        </button>
+        <div id="departmentsDropdown">
+            <div class="category">Smartphones
+                <div class="filters">
+                    <a href="#">Android</a>
+                    <a href="#">iOS</a>
+                </div>
+            </div>
+            <div class="category">Eletrodomésticos
+                <div class="filters">
+                    <a href="#">Refrigeradores</a>
+                    <a href="#">Máquinas de Lavar</a>
+                </div>
+            </div>
+            <div class="category">Informática
+                <div class="filters">
+                    <a href="#">Laptops</a>
+                    <a href="#">Desktop</a>
+                </div>
+            </div>
+            <div class="category">TV e Áudio
+                <div class="filters">
+                    <a href="#">Smart TVs</a>
+                    <a href="#">Home Theater</a>
+                </div>
+            </div>
+            <div class="category">Moda
+                <div class="filters">
+                    <a href="#">Masculina</a>
+                    <a href="#">Feminina</a>
+                </div>
+            </div>
+            <div class="category">Esporte e Lazer
+                <div class="filters">
+                    <a href="#">Equipamentos de Ginástica</a>
+                    <a href="#">Roupas de Esporte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
 
         <!-- Links da Navegação -->
         <a href="#aplicativo"><i class="fas fa-mobile-alt"></i>Baixe o App</a>
@@ -41,12 +90,30 @@
         <a href="#sobre"><i class="fas fa-info-circle"></i>Sobre Nós</a>
         <a href="carrinho.html"><i class="fas fa-shopping-cart"></i>Carrinho</a>
         <a href="favoritos.html"><i class="fas fa-heart"></i>Favoritos</a>
-        <a href="cadastro.html"><i class="fas fa-user-plus"></i>Cadastro</a>
-        <a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+        <!-- Botão de Cadastro e Login com Modal -->
+        <div class="auth-buttons">
+            <button class="auth-buttons" onmouseover="showModal()" onmouseleave="hideModal()">
+                Cadastro / Login
+            </button>
+            <div id="authModal" class="auth-modal" onmouseenter="showModal()" onmouseleave="hideModal()">
+                <div class="auth-modal-content">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input type="text" placeholder="Nome de usuário ou E-mail" required>
+                        <input type="password" placeholder="Senha" required>
+                        <button type="submit">Entrar</button>
+                    </form>
+                    <div class="auth-links">
+                        <a href="#">Esqueci a senha</a>
+                        <a href="#">Criar conta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Botão de Acessibilidade -->
-        <button class="accessibility-button" type="button" onclick="openAccessibilityModal()">
-            <i class="fas fa-universal-access"></i>Acessibilidade
+        <button id="accessibilityButton" class="accessibility-button">
+            <i class="fas fa-universal-access"></i> Acessibilidade
         </button>
     </nav>
 
