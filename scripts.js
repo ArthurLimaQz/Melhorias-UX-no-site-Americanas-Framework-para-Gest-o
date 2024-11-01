@@ -100,5 +100,31 @@ authButton.addEventListener("blur", function () {
     }, 200); // Pequena espera para permitir a interação com o modal
 });
 
-// Fecha o modal ao sair do mouse
-authModal.addEventListener("mouseleave", hideModal);
+// Quantidade de rolagem em pixels por clique de seta
+const scrollAmount = 220;
+
+function scrollLeft() {
+    const container = document.querySelector('.product-container');
+    container.scrollBy({
+        left: -scrollAmount, // Rola para a esquerda
+        behavior: 'smooth'
+    });
+
+    // Garantir que o botão de rolagem funcione ao atingir o limite da esquerda
+    if (container.scrollLeft === 0) {
+        container.scrollLeft = container.scrollWidth;
+    }
+}
+
+function scrollRight() {
+    const container = document.querySelector('.product-container');
+    container.scrollBy({
+        left: scrollAmount, // Rola para a direita
+        behavior: 'smooth'
+    });
+
+    // Garantir que o botão de rolagem funcione ao atingir o limite da direita
+    if (container.scrollLeft >= (container.scrollWidth - container.clientWidth)) {
+        container.scrollLeft = 0;
+    }
+}

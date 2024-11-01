@@ -436,3 +436,134 @@ button i {
     border: 1px solid #ccc; /* Borda dos campos */
     border-radius: 4px; /* Bordas levemente arredondadas */
 }
+
+
+    /* Estilo para o contêiner principal que alinha os cards horizontalmente */
+    .product-container {
+        max-width: calc((200px + 16px) * 5); /* Define a largura máxima para cinco cards */
+        display: flex;
+        gap: 20px; /* Espaço entre os cards */
+        overflow-x: hidden; /* Permite rolagem horizontal se necessário */
+        padding: 20px; /* Adiciona um pouco de espaço ao redor dos cards */
+        background-color: #f5f5f5;
+        margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+        
+    }
+
+    /* Estilo para cada card de produto */
+    .product-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 15px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        flex-shrink: 0;
+        transition: transform 0.2s;
+        border: 1px solid #ddd;
+        min-width: 200px;
+    }
+
+    /* Imagem do produto */
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
+        transition: transform 0.2s;
+    }
+
+    /* Nome do produto */
+    .product-name {
+        font-size: 16px;
+        margin: 10px 0;
+        color: #333;
+        font-weight: bold;
+        border-radius: 5px;        
+    }
+    
+
+    /* Avaliação do produto */
+    .product-rating {
+        color: #999;
+        font-size: 14px;
+    }
+
+    /* Preço */
+    .product-price {
+        font-size: 18px;
+        color: #30b124;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    /* Preço original (riscado) */
+    .original-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    /* Desconto */
+    .discount {
+        color: #4caf50;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .product-card:hover {
+        transform: scale(1.02); /* Efeito de zoom ao passar o mouse */
+    }
+    .product-card-link {
+        text-decoration: none; /* Remove sublinhado do link */
+        color: inherit; /* Mantém a cor do texto definida no card */
+    }
+    .product-juros{
+        color: #4d4d4d;
+        font-size: 14px;
+        font-weight: bold;
+        }
+
+    /* Contêiner principal com as setas */
+    .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    }
+    /* Setas para rolar */
+    .arrow {
+        background-color: #fff;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    
+        /* Posição das setas */
+    .left-arrow {
+    left: 10px;
+    }
+
+    .right-arrow {
+    right: 10px;
+    }
+
+    /* Centraliza e permite rolagem horizontal no contêiner */
+    .product-container {
+        display: flex;
+        gap: 16px;
+        overflow-x: hidden;
+        scroll-behavior: smooth; /* Rola suavemente */
+        max-width: 50%; /* Define a largura máxima */
+    }
+
+    .product-card:hover {
+        transform: scale(1.02);
+    }
