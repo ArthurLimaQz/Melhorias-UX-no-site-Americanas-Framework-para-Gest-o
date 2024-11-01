@@ -55,7 +55,7 @@ nav {
 
 nav a, #departmentsButton, #auth-buttons, #auth-button{
     color: rgb(255, 255, 255);
-    margin: 0 8px; /* Menos espaço entre os botões */
+    margin: 0 px; /* Menos espaço entre os botões */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -125,7 +125,7 @@ nav a.logo-link {
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
-    margin-left: auto;
+    margin: 20px;
 }
 .accessibility-button:hover, .accessibility-button:focus {
     background-color: #E60014;
@@ -266,11 +266,7 @@ footer {
 }
 
 a i {
-    margin-right: 8px; /* Ajuste o valor conforme a quantidade de espaço que você deseja */
-}
-
-button i {
-    margin-right: 8px;
+    margin-right: 08px; /* Ajuste o valor conforme a quantidade de espaço que você deseja */
 }
 
 /* Estilos para o botão Todos os Departamentos */
@@ -377,10 +373,7 @@ button i {
     display: block;
 }
 
-.auth-buttons {
-    position: relative; /* Para posicionar o modal corretamente */
-    display: inline-block; /* Para que o botão não ocupe a linha inteira */
-}
+
 
 .auth-button {
     background-color: transparent; /* Define fundo transparente como os links da navbar */
@@ -391,6 +384,8 @@ button i {
     border: none; /* Remove borda */
     cursor: pointer;
     transition: color 0.2s; /* Transição suave para a cor */
+    position: relative; /* Para posicionar o modal corretamente */
+    display: inline-block; /* Para que o botão não ocupe a linha inteira */
 }
 
 .auth-button:hover {
@@ -425,7 +420,7 @@ button i {
 
 .auth-modal button {
     background-color: var(--main-bg-color);
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -434,7 +429,7 @@ button i {
 }
 
 .auth-modal button:hover {
-    background-color: #cc0012;
+    background-color: #ff0000;
 }
 
 .auth-links {
@@ -443,7 +438,7 @@ button i {
 
 .auth-links a {
     display: block; /* Para links empilhados */
-    color: #E60014;
+    color: #ff0000;
     text-decoration: none;
     margin: 5px 0; /* Espaçamento entre links */
 }
