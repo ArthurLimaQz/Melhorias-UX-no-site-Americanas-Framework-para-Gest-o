@@ -127,20 +127,18 @@
         </div>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        <section id="home">
-            <h2>Bem-vindo à Americanas</h2>
-            <p>Encontre tudo o que precisa, com preços imperdíveis!</p>
-        </section>
+<!-- Conteúdo Principal -->
+<main class="main-content">
+    <section id="home" class="styled-section">
+        <h2>Bem-vindo à Americanas</h2>
+        <p>Encontre tudo o que precisa, com preços imperdíveis!</p>
+    </section>
 
-        <section id="ofertas">
-            <h2>Seleção de produtos patrocinados para você</h2>
-            <p>Aproveite as ofertas exclusivas de hoje!</p>
-        </section>
-        
+    <section id="ofertas" class="styled-section">
+        <h2>Seleção de produtos patrocinados para você</h2>
+        <p>Aproveite as ofertas exclusivas de hoje!</p>
+
         <div class="product-container">
-            <button class="arrow left-arrow" onclick="scrollLeft()">&#8592;</button> <!-- Seta esquerda -->          
                 <!-- Card de Produto 1 CONFIGURADO-->
                 <a href="painel_suspenso.png" target="_blank" class="product-card-link">
                     <div class="product-card">
@@ -209,10 +207,12 @@
                     <div>10% de desconto no pix</div>
                 </a>    
                 </div>
-            
-            <!-- Adicione mais cards de produtos conforme necessário -->
-            <button class="arrow right-arrow" onclick="scrollRight()">&#8594;</button> <!-- Seta direita -->
-        </main>
+
+    </section>
+    <button class="arrow left-arrow" onclick="scrollToLeft()">&#8592;</button> <!-- Seta esquerda -->
+    <button class="arrow right-arrow" onclick="scrollToRight()">&#8594;</button> <!-- Seta esquerda -->
+    
+</main>
 
     <main class="main-content">
            

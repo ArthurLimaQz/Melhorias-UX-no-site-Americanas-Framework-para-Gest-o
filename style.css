@@ -227,8 +227,42 @@ nav a.logo-link {
 /* Conteúdo Principal */
 .main-content {
     padding: 20px;
+    background-color: #f8f8f8;
 }
 
+/* Estilos das seções */
+.styled-section {
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Efeito de hover */
+.styled-section:hover {
+    transform: translateY(-5px); /* Leve elevação */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
+}
+
+/* Estilos para o título */
+.styled-section h2 {
+    color: #E60014; /* Cor destaque para o título */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para o texto */
+.styled-section p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+
+}
 /* Rodapé */
 footer {
     background-color: var(--main-bg-color);
@@ -442,12 +476,11 @@ button i {
     .product-container {
         max-width: calc((200px + 16px) * 5); /* Define a largura máxima para cinco cards */
         display: flex;
-        gap: 20px; /* Espaço entre os cards */
+        gap: 10px; /* Espaço entre os cards */
         overflow-x: hidden; /* Permite rolagem horizontal se necessário */
         padding: 20px; /* Adiciona um pouco de espaço ao redor dos cards */
         background-color: #f5f5f5;
-        margin: 0 auto; /* Centraliza o contêiner horizontalmente */
-        
+        margin: 0 auto; /* Centraliza o contêiner horizontalmente */   
     }
 
     /* Estilo para cada card de produto */
@@ -463,6 +496,9 @@ button i {
         transition: transform 0.2s;
         border: 1px solid #ddd;
         min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     /* Imagem do produto */
@@ -478,7 +514,8 @@ button i {
         margin: 10px 0;
         color: #333;
         font-weight: bold;
-        border-radius: 5px;        
+        border-radius: 5px;
+          
     }
     
 
@@ -486,6 +523,7 @@ button i {
     .product-rating {
         color: #999;
         font-size: 14px;
+        padding: 3px;
     }
 
     /* Preço */
@@ -533,35 +571,50 @@ button i {
     width: 100%;
     overflow: hidden;
     }
-    /* Setas para rolar */
+    /* Novo estilo das setas */
     .arrow {
-        background-color: #fff;
-        border: none;
-        font-size: 24px;
+        background-color: rgba(230, 0, 20, 0.8); /* Vermelho semi-transparente */
+        border: 2px solid white; /* Borda branca para contraste */
+        color: white;
+        font-size: 22px;
         cursor: pointer;
-        padding: 8px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px; /* Bordas suavemente arredondadas */
         position: absolute;
-        top: 50%;
+        top: 63%;
         transform: translateY(-50%);
         z-index: 1;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
     }
-    
-        /* Posição das setas */
+
+    /* Efeito de hover com animação */
+    .arrow:hover {
+        transform: translateY(-50%) scale(1.15); /* Aumenta levemente */
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4); /* Sombra mais intensa no hover */
+    }
+
+    /* Ícone de seta para a esquerda */
+    .left-arrow::before {
+        content: "⟨";
+    }
+
+    /* Ícone de seta para a direita */
+    .right-arrow::after {
+        content: "⟩";
+    }
+
+    /* Posição das setas */
     .left-arrow {
-    left: 10px;
+        left: 16%;
     }
 
     .right-arrow {
-    right: 10px;
-    }
-
-    /* Centraliza e permite rolagem horizontal no contêiner */
-    .product-container {
-        display: flex;
-        gap: 16px;
-        overflow-x: hidden;
-        scroll-behavior: smooth; /* Rola suavemente */
-        max-width: 50%; /* Define a largura máxima */
+        right: 16%;
     }
 
     .product-card:hover {

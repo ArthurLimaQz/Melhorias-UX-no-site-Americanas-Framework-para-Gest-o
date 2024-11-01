@@ -100,10 +100,9 @@ authButton.addEventListener("blur", function () {
     }, 200); // Pequena espera para permitir a interação com o modal
 });
 
-// Quantidade de rolagem em pixels por clique de seta
-const scrollAmount = 220;
+const scrollAmount = 100; // Defina o valor de rolagem que preferir
 
-function scrollLeft() {
+function scrollToLeft() { 
     const container = document.querySelector('.product-container');
     container.scrollBy({
         left: -scrollAmount, // Rola para a esquerda
@@ -116,7 +115,7 @@ function scrollLeft() {
     }
 }
 
-function scrollRight() {
+function scrollToRight() {
     const container = document.querySelector('.product-container');
     container.scrollBy({
         left: scrollAmount, // Rola para a direita
@@ -128,3 +127,4 @@ function scrollRight() {
         container.scrollLeft = 0;
     }
 }
+
