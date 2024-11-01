@@ -100,7 +100,7 @@ authButton.addEventListener("blur", function () {
     }, 200); // Pequena espera para permitir a interação com o modal
 });
 
-const scrollAmount = 100; // Defina o valor de rolagem que preferir
+const scrollAmount = 200; // Defina o valor de rolagem que preferir
 
 function scrollToLeft() { 
     const container = document.querySelector('.product-container');

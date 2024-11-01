@@ -241,12 +241,6 @@ nav a.logo-link {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
 }
 
-/* Efeito de hover */
-.styled-section:hover {
-    transform: translateY(-5px); /* Leve elevação */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
-}
-
 /* Estilos para o título */
 .styled-section h2 {
     color: #E60014; /* Cor destaque para o título */
