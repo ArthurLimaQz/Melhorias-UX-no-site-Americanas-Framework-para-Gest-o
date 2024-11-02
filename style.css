@@ -479,7 +479,7 @@ a i {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 200px;
         padding: 15px;
-        text-align: center;
+        text-align: left;
         font-family: Arial, sans-serif;
         flex-shrink: 0;
         transition: transform 0.2s;
@@ -492,18 +492,22 @@ a i {
 
     /* Imagem do produto */
     .product-card img {
-        width: 100%;
+        width: 100%; /* Define a largura para 100% do container */
+        height: 200px; /* Define uma altura fixa para uniformizar as imagens */
+        object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
         border-radius: 8px;
-        transition: transform 0.2s;
+        display: block;
+        margin: 0 auto;
     }
 
     /* Nome do produto */
     .product-name {
         font-size: 16px;
-        margin: 10px 0;
+        margin: 8px 0;
         color: #333;
         font-weight: bold;
         border-radius: 5px;
+        height: 50px;
           
     }
     
@@ -513,6 +517,7 @@ a i {
         color: #999;
         font-size: 14px;
         padding: 3px;
+        margin-top: 13px; /* Espaçamento da parte superior */
     }
 
     /* Preço */
@@ -550,6 +555,11 @@ a i {
         font-size: 14px;
         font-weight: bold;
         }
+ /* porcentagem */
+    .porcentagem {
+    color: #1d1d1d;
+    font-size: 14px;    
+    }
 
     /* Contêiner principal com as setas */
     .carousel-container {
@@ -574,7 +584,7 @@ a i {
         justify-content: center;
         border-radius: 12px; /* Bordas suavemente arredondadas */
         position: absolute;
-        top: 63%;
+        top: 130%; /* Ajuste das setas cima ou baixo*/
         transform: translateY(-50%);
         z-index: 1;
         box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra para efeito de profundidade */
@@ -599,13 +609,177 @@ a i {
 
     /* Posição das setas */
     .left-arrow {
-        left: 16%;
+        left: 18%;
+        
     }
 
     .right-arrow {
-        right: 16%;
+        right: 18%;
     }
 
     .product-card:hover {
         transform: scale(1.02);
     }
+
+
+    /*novo conteiner---------------------------------------------*/
+
+    /* Contêiner principal do carrossel */
+.carousel-container2 {
+    position: relative; /* Permite o posicionamento absoluto dos elementos dentro do contêiner */
+    width: 100%; /* Largura total do contêiner */
+    max-width: 1500px; /* Largura máxima para limitar o tamanho do carrossel */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    overflow: hidden; /* Oculta as partes dos slides que ficam fora da área visível */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+}
+
+/* Estilo para o contêiner dos slides do carrossel */
+.carousel-slide2 {
+    display: flex; /* Alinha os slides em uma linha horizontal */
+    transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave ao deslizar os slides */
+    width: 100%; /* Define a largura total */
+}
+
+/* Estilos para cada slide do carrossel */
+.carousel-item2 {
+    min-width: 100%; /* Cada item ocupa 100% da largura do contêiner do carrossel */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
+}
+
+/* Estilos para a imagem dentro de cada slide */
+.carousel-item2 img {
+    width: 100%; /* A imagem ocupa 100% da largura do item do carrossel */
+    display: block; /* Remove o espaço embaixo da imagem */
+}
+
+/* Estilos para os botões de navegação (setas) */
+.carousel-arrow2 {
+    position: absolute; /* Posiciona as setas de forma absoluta dentro do contêiner */
+    top: 50%; /* Centraliza verticalmente as setas no contêiner */
+    transform: translateY(-50%); /* Ajusta o posicionamento vertical para centralizar */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para as setas */
+    border: none; /* Remove bordas padrão */
+    color: white; /* Cor do ícone da seta */
+    padding: 10px; /* Espaçamento interno para o ícone */
+    cursor: pointer; /* Cursor de mão para indicar que é clicável */
+    border-radius: 50%; /* Formato arredondado das setas */
+    z-index: 10; /* Garante que as setas fiquem sobre os slides */
+}
+
+/* Posiciona a seta esquerda */
+.carousel-arrow2.left2 {
+    left: 10px; /* Define a posição da seta esquerda */
+}
+
+/* Posiciona a seta direita */
+.carousel-arrow2.right2 {
+    right: 10px; /* Define a posição da seta direita */
+}
+
+/* Estilo para o contêiner dos indicadores (bolinhas) */
+.carousel-indicators2 {
+    position: absolute; /* Posiciona o contêiner das bolinhas de forma absoluta */
+    bottom: 15px; /* Espaçamento da base do contêiner */
+    left: 50%; /* Centraliza horizontalmente no contêiner do carrossel */
+    transform: translateX(-50%); /* Ajusta a posição para realmente centralizar */
+    display: flex; /* Alinha os indicadores horizontalmente */
+    gap: 8px; /* Espaçamento entre cada bolinha */
+}
+
+/* Estilo para cada bolinha de indicador */
+.carousel-indicators2 button {
+    width: 10px; /* Largura da bolinha */
+    height: 10px; /* Altura da bolinha */
+    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo semi-transparente */
+    border: none; /* Remove borda padrão */
+    border-radius: 50%; /* Formato arredondado */
+    cursor: pointer; /* Cursor de mão para indicar que é clicável */
+}
+
+/* Estilo para o indicador ativo */
+.carousel-indicators2 button.active {
+    background-color: white; /* Bolinha de indicador ativo com cor branca */
+}
+
+/*cards*/
+
+.card {
+    background-color: #fff; /* Define a cor de fundo do elemento como branco (#fff) */
+    border-radius: 8px; /* Aplica bordas arredondadas ao elemento, com um raio de 8 pixels */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao elemento, com deslocamento horizontal de 0, vertical de 4 pixels, e desfoque de 8 pixels, com uma cor preta semi-transparente (10% de opacidade) */
+    width: 200px; /* Define a largura do elemento como 200 pixels */
+    padding: 10px; /* Adiciona um espaço interno de 15 pixels ao redor do conteúdo do elemento */
+    text-align: left; /* Alinha o texto dentro do elemento à esquerda */
+    font-family: Arial, sans-serif; /* Define a fonte do texto como Arial, com uma fonte alternativa (sans-serif) caso Arial não esteja disponível */
+    flex-shrink: 0; /* Impede que o elemento diminua de tamanho em um contêiner flexível (flexbox) */
+    transition: transform 0.2s; /* Define uma transição suave para as mudanças na propriedade 'transform', com duração de 0.2 segundos */
+    border: 1px solid #ddd; /* Aplica uma borda de 1 pixel ao redor do elemento, com uma cor cinza claro (#ddd) */
+    min-width: 200px; /* Define a largura mínima do elemento como 200 pixels, garantindo que não fique menor que isso */
+    display: flex; /* Define o elemento como um contêiner flexível, permitindo o uso das propriedades de layout flexbox */
+    flex-direction: column; /* Organiza os itens filhos do contêiner flex em uma coluna (verticalmente) */
+    align-items: stretch; /* Faz com que os itens filhos do contêiner flex se estiquem para preencher a largura do contêiner */  
+    border: 1px solid #ccc; /* Adicione uma borda se desejar */ 
+}
+
+.card-name{
+    font-size: 16px; /* Define o tamanho da fonte para 16 pixels. Um tamanho padrão que é fácil de ler para a maioria dos usuários. */
+    margin: 8px 0; /* Define a margem superior e inferior como 8 pixels, e a margem esquerda e direita como 0 pixels. Isso cria espaço acima e abaixo do elemento. */
+    color: #333; /* Define a cor do texto como um cinza escuro (#333). Essa cor é menos agressiva para os olhos do que o preto puro. */
+    font-weight: bold; /* Define o peso da fonte como 'bold', tornando o texto mais espesso e enfatizado. */
+    border-radius: 5px; /* Arredonda os cantos do elemento em 5 pixels, proporcionando um visual mais suave e moderno. */
+    height: 50px; /* Define a altura do elemento como 50 pixels. Isso pode ser usado para garantir que o elemento tenha uma altura uniforme, independente do conteúdo. */
+    text-align: center;
+    line-height: 50px;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Efeito de zoom ao passar o mouse */
+}
+.card img {
+    width: 100px; /* Define a largura fixa de 150 pixels */
+    height: 100px; /* Define a altura fixa de 150 pixels */
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card-description {
+    font-size: 1em;
+    color: #555;
+    margin: 12px 0;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+
+.card-link {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Mantém a cor do texto definida no card */
+}
+
+.card-container {
+    display: flex; /* Usando flexbox para alinhar os cards lado a lado */
+    gap: 10px; /* Espaçamento entre os cards */
+}

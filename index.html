@@ -133,14 +133,107 @@
 <main class="main-content">
     <section id="home" class="styled-section">
         <h2>Bem-vindo à Americanas</h2>
-        <p>Encontre tudo o que precisa, com preços imperdíveis!</p>
+        <div class="carousel-container2"> <!-- CARROSSEL DE ANÚNCIO: Contêiner principal do carrossel -->
+
+            <!-- Botões de navegação -->
+            <button class="carousel-arrow2 left2" onclick="previousSlide()">&#9664;</button> <!-- Botão de navegação para a esquerda (próximo) -->
+            <button class="carousel-arrow2 right2" onclick="nextSlide()">&#9654;</button> <!-- Botão de navegação para a direita (próximo) -->
+        
+            <!-- Slides do carrossel -->
+            <div class="carousel-slide2" id="carouselSlide2"> <!-- Contêiner dos slides do carrossel -->
+                
+                <!-- Cada slide do carrossel com uma imagem de anúncio -->
+                <div class="carousel-item2">
+                    <img src="CARROCEU1.png" alt="Anúncio 1"> <!-- Primeiro slide com imagem do anúncio 1 -->
+                </div>
+                <div class="carousel-item2">
+                    <img src="CARROCEU2.png" alt="Anúncio 2"> <!-- Segundo slide com imagem do anúncio 2 -->
+                </div>
+                <div class="carousel-item2">
+                    <img src="CARROCEU3.png" alt="Anúncio 3"> <!-- Terceiro slide com imagem do anúncio 3 -->
+                </div>
+        
+            </div>
+            
+            <!-- Indicadores (bolinhas) -->
+            <div class="carousel-indicators2" id="carouselIndicators2"> <!-- Contêiner dos indicadores de navegação do carrossel -->
+                <button class="active" onclick="setSlide(0)"></button> <!-- Botão para o primeiro slide (ativo inicialmente) -->
+                <button onclick="setSlide(1)"></button> <!-- Botão para o segundo slide -->
+                <button onclick="setSlide(2)"></button> <!-- Botão para o terceiro slide -->
+            </div>
+        
+        </div>       
+        
+          
     </section>
+
+    <!--CARD-->
+    <div class="card-container">
+        <!--CARD1-->
+        <div class="card">
+            <a href="Automotivo.png" target="_blank" class="card-link">
+                <img src="Automotivo.png" alt="Imagem do Card"> 
+                <div class="card-name">Automotivo</div>           
+            </a>
+        </div>
+        <!--CARD2-->
+        <div class="card">
+            <a href="Brinquedo.png" target="_blank" class="card-link">
+                <img src="Brinquedo.png" alt="Imagem do Card">
+                <div class="card-name">Brinquedos</div>                 
+            </a>
+        </div>
+        <!--CARD3-->
+        <div class="card">
+            <a href="Casa.png" target="_blank" class="card-link">
+                <img src="Casa.png" alt="Imagem do Card">
+                <div class="card-name">Casa</div>                 
+            </a>
+        </div>
+        <!--CARD4-->
+        <div class="card">
+            <a href="Comercio.png" target="_blank" class="card-link">
+                <img src="Comercio.png" alt="Imagem do Card">
+                <div class="card-name">Comércio e Indústria</div>                 
+            </a>
+        </div>
+        <!--CARD5-->
+        <div class="card">
+            <a href="Eletroportáteis.png" target="_blank" class="card-link">
+                <img src="Eletroportáteis.png" alt="Imagem do Card">
+                <div class="card-name">Eletroportáteis</div>                 
+            </a>
+        </div>
+        <!--CARD6-->
+        <div class="card">
+            <a href="ferramentas.png" target="_blank" class="card-link">
+                <img src="ferramentas.png" alt="Imagem do Card">
+                <div class="card-name">Ferramentas</div>                 
+            </a>
+        </div>
+        <!--CARD7-->
+        <div class="card">
+            <a href="oferta.png" target="_blank" class="card-link">
+                <img src="oferta.png" alt="Imagem do Card">
+                <div class="card-name">Ofertas do dia</div>                 
+            </a>
+        </div>
+        <!--CARD8-->
+        <div class="card">
+            <a href="utilidade domestica.png" target="_blank" class="card-link">
+                <img src="utilidade domestica.png" alt="Imagem do Card">
+                <div class="card-name">Utilidades Domésticas</div>                 
+            </a>
+        </div>
+        <!-- Adicione mais cards aqui se necessário -->
+    </div>
 
     <section id="ofertas" class="styled-section">
         <h2>Seleção de produtos patrocinados para você</h2>
         <p>Aproveite as ofertas exclusivas de hoje!</p>
-
         <div class="product-container">
+             <!-- Botões de navegação -->
+                        
                 <!-- Card de Produto 1 CONFIGURADO-->
                 <a href="painel_suspenso.png" target="_blank" class="product-card-link">
                     <div class="product-card">
@@ -151,7 +244,7 @@
                     <div class="product-juros">10x de R$ 59,95 sem juros</div>
                     <div>ou</div>
                     <div class="product-price">R$ 507,59</div>
-                    <div>10% de desconto no pix</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
                 </a>
                 </div>
             
@@ -165,7 +258,7 @@
                     <div class="product-juros">10x de R$ 128,68 sem juros</div>
                     <div>ou</div>
                     <div class="product-price">R$ 1.169,90</div>
-                    <div>10% de desconto no pix</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
                 </a>
                 </div>
             
@@ -179,7 +272,7 @@
                     <div class="product-juros">10x de R$ 175,89 sem juros</div>
                     <div>ou</div>
                     <div class="product-price">R$ 1.599,00</div>
-                    <div>10% de desconto no pix</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
                 </a>
                 </div>
                 <!-- Card de Produto 4 -->
@@ -192,7 +285,7 @@
                     <div class="product-juros">10x de R$ 175,89 sem juros</div>
                     <div>ou</div>
                     <div class="product-price">R$ 1.599,00</div>
-                    <div>10% de desconto no pix</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
                 </a>
                 </div>
             
@@ -206,16 +299,93 @@
                     <div class="product-juros">10x de R$ 175,89 sem juros</div>
                     <div>ou</div>
                     <div class="product-price">R$ 1.599,00</div>
-                    <div>10% de desconto no pix</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
                 </a>    
                 </div>
-
+        <button class="arrow left-arrow" onclick="scrollToLeft()">&#8592;</button> <!-- Seta esquerda -->
+        <button class="arrow right-arrow" onclick="scrollToRight()">&#8594;</button> <!-- Seta esquerda -->   
     </section>
-    <button class="arrow left-arrow" onclick="scrollToLeft()">&#8592;</button> <!-- Seta esquerda -->
-    <button class="arrow right-arrow" onclick="scrollToRight()">&#8594;</button> <!-- Seta esquerda -->
+     
     
 </main>
 
+<!-- Conteúdo Secundário 2 -->
+<main class="main-content">   
+    <section id="home" class="styled-section">
+        <h2>Promoções feitas sob medida para você!</h2>
+
+        <div class="product-container">
+                <!-- Card de Produto 1 CONFIGURADO-->
+                <a href="painel_suspenso.png" target="_blank" class="product-card-link">
+                    <div class="product-card">
+                    <img src="painel_suspenso.png" alt="Produto 1">
+                    <div class="product-name">Painel Suspenso Denver Sala TV até 55 Polegadas 1 Porta - Móveis Bechara</div>
+                    <div class="product-rating">★★★★★ sem avaliações</div>
+                    <div class="original-price">R$ 599,59</div>
+                    <div class="product-juros">10x de R$ 59,95 sem juros</div>
+                    <div>ou</div>
+                    <div class="product-price">R$ 507,59</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
+                </a>
+                </div>
+            
+                <!-- Card de Produto 2 -->
+                <a href="guarda_roupa.png" target="_blank" class="product-card-link">
+                    <div class="product-card">
+                    <img src="guarda_roupa.png" alt="Produto 2">
+                    <div class="product-name">Guarda Roupa Casal Heros 6 Portas Com pés Moderna</div>
+                    <div class="product-rating">★★★★★ sem avaliações</div>
+                    <div class="original-price">R$ 1.286,89</div>
+                    <div class="product-juros">10x de R$ 128,68 sem juros</div>
+                    <div>ou</div>
+                    <div class="product-price">R$ 1.169,90</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
+                </a>
+                </div>
+            
+                <!-- Card de Produto 3 -->
+                <a href="sofa.png" target="_blank" class="product-card-link">
+                    <div class="product-card">
+                    <img src="sofa.png" alt="Produto 3">
+                    <div class="product-name">Sofá 3 Lugares Retrátil e Reclinável Cama inBox Senses 2,00m Velusoft Café</div>
+                    <div class="product-rating">★★★★★ sem avaliações</div>
+                    <div class="original-price">R$ 1.758,9</div>
+                    <div class="product-juros">10x de R$ 175,89 sem juros</div>
+                    <div>ou</div>
+                    <div class="product-price">R$ 1.599,00</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
+                </a>
+                </div>
+                <!-- Card de Produto 4 -->
+                <a href="sofa.png" target="_blank" class="product-card-link">
+                    <div class="product-card">
+                    <img src="sofa.png" alt="Produto 3">
+                    <div class="product-name">Sofá 3 Lugares Retrátil e Reclinável Cama inBox Senses 2,00m Velusoft Café</div>
+                    <div class="product-rating">★★★★★ sem avaliações</div>
+                    <div class="original-price">R$ 1.758,9</div>
+                    <div class="product-juros">10x de R$ 175,89 sem juros</div>
+                    <div>ou</div>
+                    <div class="product-price">R$ 1.599,00</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
+                </a>
+                </div>
+            
+                <!-- Card de Produto 5 -->
+                <a href="sofa.png" target="_blank" class="product-card-link">
+                    <div class="product-card">
+                    <img src="sofa.png" alt="Produto 3">
+                    <div class="product-name">Sofá 3 Lugares Retrátil e Reclinável Cama inBox Senses 2,00m Velusoft Café</div>
+                    <div class="product-rating">★★★★★ sem avaliações</div>
+                    <div class="original-price">R$ 1.758,9</div>
+                    <div class="product-juros">10x de R$ 175,89 sem juros</div>
+                    <div>ou</div>
+                    <div class="product-price">R$ 1.599,00</div>
+                    <div class="porcentagem">10% de desconto no pix</div>
+                </a>    
+                </div>
+
+    </section>    
+</main>
     <main class="main-content">
            
         <section id="contato">

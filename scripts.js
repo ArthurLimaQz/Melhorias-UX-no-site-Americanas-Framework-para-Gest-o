@@ -100,6 +100,8 @@ authButton.addEventListener("blur", function () {
     }, 200); // Pequena espera para permitir a interação com o modal
 });
 
+// SETA DO CONTEINER
+
 const scrollAmount = 200; // Defina o valor de rolagem que preferir
 
 function scrollToLeft() { 
@@ -128,3 +130,39 @@ function scrollToRight() {
     }
 }
 
+
+// NOVA SETA PRO carrossel
+
+    // Função para avançar para o próximo slide
+    function nextSlide() {
+        const slides = document.querySelectorAll('.carousel-item2');
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    }
+
+    // Função para voltar ao slide anterior
+    function previousSlide() {
+        const slides = document.querySelectorAll('.carousel-item2');
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+
+    // Função para definir um slide específico
+    function setSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
+    }
+
+    // Função para atualizar a posição dos slides e dos indicadores
+    function updateSlidePosition() {
+        const slideContainer = document.getElementById('carouselSlide2');
+        const indicators = document.querySelectorAll('.carousel-indicators2 button');
+        
+        // Move o slide
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Atualiza os indicadores
+        indicators.forEach((button, index) => {
+            button.classList.toggle('active', index === currentIndex);
+        });
+    }
