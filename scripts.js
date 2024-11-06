@@ -195,3 +195,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa o carrossel na posição correta ao carregar a página
     updateSlidePosition();
 });
+
+
+// Funções para abrir e fechar o chatbot //
+function toggleChatbot() {
+    const chatbotBox = document.getElementById("chatbot-box");
+    chatbotBox.style.display = chatbotBox.style.display === "none" ? "flex" : "none";
+}
+
+function sendMessage() {
+    const inputField = document.getElementById("chatbot-input");
+    const message = inputField.value.trim();
+    if (message) {
+        const chatContent = document.getElementById("chatbot-content");
+        chatContent.innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+        inputField.value = "";
+        chatContent.scrollTop = chatContent.scrollHeight;  // Rolagem para o final
+    }
+}
+
+// Inicializa o chat como escondido ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("chatbot-box").style.display = "none";
+});

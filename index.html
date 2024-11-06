@@ -405,6 +405,25 @@
         <p>&copy; 2024 Americanas - Passou, cestou :) Todos os direitos reservados.</p>
     </footer>
 
+
+    <!-- HTML: Botão do chat e Janela de chat -->
+    <div id="chatbot-button" onclick="toggleChatbot()">
+        🤖
+    </div>
+    <div id="chatbot-box" class="hidden">
+        <div id="chatbot-header">
+            <span>Suporte Bot</span>
+            <button onclick="toggleChatbot()">X</button>
+        </div>
+        <div id="chatbot-content">
+            <p>Olá! Como posso ajudar você hoje?</p>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
     <!-- Script externo -->
     <script src="scripts.js"></script>
 </body>
