@@ -4,7 +4,7 @@
     --main-bg-color: #E60014;
     --text-color: #333;
     --highlight-color: #E60014;
-    --font-size-default: 16px;
+    --font-size-default: 1rem;
 }
 
 body {
@@ -20,7 +20,7 @@ header {
     background-color: #ffffff;
     color: var(--text-color);
     text-align: center;
-    padding: 0;
+    padding: 0.5rem 0;
     font-size: 0.8em;
     font-weight: bold;
     line-height: 1;
@@ -28,7 +28,7 @@ header {
 
 header h1 {
     margin: 0;
-    padding: 5px 0;
+    padding: 0.5rem 0;
 }
 
 .highlight {
@@ -40,30 +40,29 @@ header h1 {
 nav {
     background-color: var(--main-bg-color);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px 15px; /* Menos padding para compactar */
+    padding: 0.5rem 1rem;
     position: relative;
 }
 
 .logo {
-    height: 80px; /* Reduzido para economizar espaço */
+    height: 5rem; /* Usando rem para manter proporção */
     width: auto;
-    margin-right: 15px;
-    box-shadow: none;
+    margin-right: 1rem;
 }
 
-nav a, #departmentsButton, #auth-buttons, #auth-button{
+nav a, #departmentsButton, #auth-buttons, #auth-button {
     color: rgb(255, 255, 255);
-    margin: 0 px; /* Menos espaço entre os botões */
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 0.85em; /* Fonte ligeiramente menor */
-    padding: 6px 10px; /* Padding reduzido */
+    font-size: 0.85em;
+    padding: 0.4rem 0.6rem;
     transition: background-color 0.2s, transform 0.2s;
-    border-radius: 3px; /* Bordas levemente arredondadas */
+    border-radius: 0.3rem;
 }
+
 nav a:hover, nav a:focus, #accessibilityButton:hover, #departmentsButton:hover {
     background-color: #cc0012;
     outline: none;
@@ -74,28 +73,55 @@ nav a.logo-link {
     outline: none !important; /* Remove qualquer contorno */
 }
 
+/* Tooltip personalizado */
+nav a:hover::after {
+    content: attr(data-tooltip); /* Define o conteúdo do tooltip com o texto em data-tooltip */
+    position: absolute;
+    bottom: 120%; /* Posiciona o tooltip acima do link */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 0.8em;
+    white-space: nowrap; /* Evita que o texto quebre */
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+}
+
+/* Mostrar o tooltip ao passar o mouse */
+nav a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Barra de pesquisa */
 .search-bar {
-    margin-left: 15px;
+    margin-left: 1rem;
     display: flex;
     align-items: center;
+    width: 50%; /* Expandir para melhorar o layout em dispositivos móveis */
 }
+
 .search-input {
-    padding: 8px 8px 8px 35px;
+    padding: 0.5rem 0.5rem 0.5rem 2.2rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 150px;
+    border-radius: 0.3rem;
+    width: 100%; /* Ajustável com a tela */
     background-image: url('https://cdn-icons-png.flaticon.com/512/54/54481.png');
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: right 8px center;
 }
 .search-button {
-    padding: 8px 12px;
+    padding: 0.5rem;
     background-color: var(--main-bg-color);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -115,17 +141,17 @@ nav a.logo-link {
 
 /* Botão de Acessibilidade */
 .accessibility-button {
-    padding: 10px;
+    padding: 0.6rem;
     background-color: #ffffff;
     color: #333;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3rem;
     cursor: pointer;
     font-size: 1em;
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
-    margin: 20px;
+    margin: 1rem;
 }
 .accessibility-button:hover, .accessibility-button:focus {
     background-color: #E60014;
@@ -142,16 +168,16 @@ nav a.logo-link {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escurecido */
-    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    backdrop-filter: blur(0.3rem); /* Efeito de desfoque no fundo */
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto;
-    padding: 40px;
+    padding: 2rem;
     border-radius: 12px;
     width: 90%;
-    max-width: 450px;
+    max-width: 28rem;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     text-align: center;
     font-size: 1.2em;
@@ -465,20 +491,21 @@ a i {
     .product-container {
         max-width: calc((200px + 16px) * 5); /* Define a largura máxima para cinco cards */
         display: flex;
-        gap: 10px; /* Espaço entre os cards */
-        overflow-x: hidden; /* Permite rolagem horizontal se necessário */
-        padding: 20px; /* Adiciona um pouco de espaço ao redor dos cards */
+        gap: 1rem; /* Espaço entre os cards */
+        overflow-x: auto; /* Permite rolagem horizontal se necessário */
+        padding: 1rem; /* Adiciona um pouco de espaço ao redor dos cards */
         background-color: #f5f5f5;
         margin: 0 auto; /* Centraliza o contêiner horizontalmente */   
+        overflow: hidden
     }
 
     /* Estilo para cada card de produto */
     .product-card {
         background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        padding: 15px;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+        width: 12.5rem;
+        padding: 0.8rem;
         text-align: left;
         font-family: Arial, sans-serif;
         flex-shrink: 0;
@@ -493,7 +520,7 @@ a i {
     /* Imagem do produto */
     .product-card img {
         width: 100%; /* Define a largura para 100% do container */
-        height: 200px; /* Define uma altura fixa para uniformizar as imagens */
+        height: auto; /* Define uma altura fixa para uniformizar as imagens */
         object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
         border-radius: 8px;
         display: block;
@@ -561,51 +588,41 @@ a i {
     font-size: 14px;    
     }
 
-
-    /* Contêiner principal com as setas */
-    .carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    }
     /* Novo estilo das setas */
     .arrow {
-        position: relative; /* Posiciona a seta de forma absoluta dentro do contêiner */
-        top: 50%; /* Centraliza verticalmente a seta no contêiner */
-        transform: translateY(-50%); /* Ajusta o posicionamento vertical para centralizar */
-        background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente branco para a seta */
-        color: black; /* Cor da seta */
-        width: 30px; /* Largura reduzida para ficar próxima ao tamanho da seta */
-        height: 30px; /* Altura reduzida para ficar próxima ao tamanho da seta */
-        cursor: pointer; /* Cursor de mão para indicar que é clicável */
-        border-radius: 50%; /* Formato arredondado */
-        border: 1px solid rgba(0, 0, 0, 0.2); /* Borda sutil */
-        z-index: 10; /* Garante que a seta fique sobre os slides */
-        font-size: 12px; /* Tamanho da fonte menor para a seta */
-        display: flex; /* Centraliza a seta dentro do círculo */
-        align-items: center; /* Centraliza verticalmente */
-        justify-content: center; /* Centraliza horizontalmente */
-        padding: 0; /* Remove padding extra */
+        position: absolute; /* Posicionamento relativo ao contêiner */
+        top: 50%; /* Centraliza verticalmente */
+        background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
+        color: black;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        font-size: 1rem;
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     /* Efeito de hover com animação */
     .arrow:hover {
-        background-color: rgba(255, 255, 255, 1); /* Fundo branco ao passar o mouse */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
     }
-
 
     /* Posição das setas */
     .left-arrow {
-        left: 10px; /* Define a posição da seta esquerda */
-        
+        margin-left: 20rem;
+        transform: translateY(2200%); /* Ajusta o posicionamento vertical para centralizar */
     }
 
     .right-arrow {
-        right: 10px; /* Define a posição da seta direita */
+        margin-left: 95rem;
+        transform: translateY(2200%); /* Ajusta o posicionamento vertical para centralizar */
     }
 
     .product-card:hover {
@@ -671,7 +688,7 @@ a i {
 /* Estilo para o contêiner dos indicadores (bolinhas) */
 .carousel-indicators2 {
     position: absolute; /* Posiciona o contêiner das bolinhas de forma absoluta */
-    bottom: 15px; /* Espaçamento da base do contêiner */
+    bottom: 1rem; /* Espaçamento da base do contêiner */
     left: 50%; /* Centraliza horizontalmente no contêiner do carrossel */
     transform: translateX(-50%); /* Ajusta a posição para realmente centralizar */
     display: flex; /* Alinha os indicadores horizontalmente */
@@ -697,8 +714,8 @@ a i {
 
 .card {
     background-color: #fff; /* Define a cor de fundo do elemento como branco (#fff) */
-    border-radius: 8px; /* Aplica bordas arredondadas ao elemento, com um raio de 8 pixels */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao elemento, com deslocamento horizontal de 0, vertical de 4 pixels, e desfoque de 8 pixels, com uma cor preta semi-transparente (10% de opacidade) */
+    border-radius: 0.5rem; /* Aplica bordas arredondadas ao elemento, com um raio de 8 pixels */
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao elemento, com deslocamento horizontal de 0, vertical de 4 pixels, e desfoque de 8 pixels, com uma cor preta semi-transparente (10% de opacidade) */
     width: 200px; /* Define a largura do elemento como 200 pixels */
     padding: 10px; /* Adiciona um espaço interno de 15 pixels ao redor do conteúdo do elemento */
     text-align: left; /* Alinha o texto dentro do elemento à esquerda */
@@ -737,7 +754,7 @@ a i {
 }
 
 .card-content {
-    padding: 16px;
+    padding: 1rem;
 }
 
 .card-title {
@@ -775,7 +792,6 @@ a i {
     gap: 10px; /* Espaçamento entre os cards */
 }
 
-    /* Botão flutuante do chatbot */
     /* Botão flutuante do chatbot */
     #chatbot-button {
         position: fixed;

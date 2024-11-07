@@ -84,12 +84,12 @@
 
 
         <!-- Links da Navegação -->
-        <a href="#aplicativo"><i class="fas fa-mobile-alt"></i>Baixe o App</a>
-        <a href="#ofertas"><i class="fas fa-tags"></i>Ofertas do Dia</a>
-        <a href="#contato"><i class="fas fa-phone-alt"></i>Contato</a>
-        <a href="#sobre"><i class="fas fa-info-circle"></i>Sobre Nós</a>
-        <a href="carrinho.html"><i class="fas fa-shopping-cart"></i>Carrinho</a>
-        <a href="favoritos.html"><i class="fas fa-heart"></i>Favoritos</a>
+        <a href="#aplicativo" data-tooltip="Baixar APP"><i class="fas fa-mobile-alt"></i></a>
+        <a href="#ofertas" data-tooltip="Ofertas do Dia"><i class="fas fa-tags"></i></a>
+        <a href="#contato" data-tooltip="Contato"><i class="fas fa-phone-alt"></i></a>
+        <a href="#sobre" data-tooltip="Sobre nós"><i class="fas fa-info-circle"></i></a>
+        <a href="carrinho.html" data-tooltip="Carrinho"><i class="fas fa-shopping-cart"></i></a>
+        <a href="favoritos.html" data-tooltip="Favoritos"><i class="fas fa-heart"></i></a>
 
         <!-- Botão de Cadastro e Login com Modal -->
         <div class="auth-button">
@@ -114,7 +114,7 @@
         </div>
 
         <!-- Botão de Acessibilidade -->
-        <button id="accessibilityButton" class="accessibility-button" aria-label="Configurações de Acessibilidade">
+        <button id="accessibilityButton" class="accessibility-button" aria-label="Configurações de Acessibilidade" title="Botão de Acessibilidade">
             <i class="fas fa-universal-access"></i> <!-- Texto para acessibilidade -->
         </button>
     </nav>
@@ -228,12 +228,14 @@
         <!-- Adicione mais cards aqui se necessário -->
     </div>
 
+    <button class="arrow left-arrow" onclick="scrollToLeft()">&#9664;</button> <!-- Seta esquerda -->    
+
     <section id="ofertas" class="styled-section">
         <h2>Seleção de produtos patrocinados para você</h2>
         <p>Aproveite as ofertas exclusivas de hoje!</p>
         <div class="product-container">
              <!-- Botões de navegação -->
-             <button class="arrow left-arrow" onclick="scrollToLeft()">&#8592;</button> <!-- Seta esquerda -->            
+         
                 <!-- Card de Produto 1 CONFIGURADO-->
                 <a href="images/painel_suspenso.png" target="_blank" class="product-card-link">
                     <div class="product-card">
@@ -303,9 +305,11 @@
                 </a>    
                 </div>
        
-        <button class="arrow right-arrow" onclick="scrollToRight()">&#8594;</button> <!-- Seta esquerda -->   
+        
+
     </section>
-     
+
+    <button class="arrow right-arrow" onclick="scrollToRight()">&#9654;</button> <!-- Seta direita -->   
     
 </main>
 
