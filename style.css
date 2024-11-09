@@ -953,3 +953,86 @@ a i {
         align-items: center;
         margin-top: 20px;
       }
+/* DEPARTAMENTOS */
+    
+    .footer {
+        display: flex; /* Define o layout do footer como flexível para alinhar os itens */
+        justify-content: space-between; /* Distribui o espaço entre os itens do footer de forma uniforme */
+        padding: 20px; /* Adiciona um preenchimento ao redor do conteúdo do footer */
+        background-color: rgb(255, 255, 255); /* Define a cor de fundo do footer como branco */
+    }
+    
+    .footer-section {
+        width: 12%; /* Define a largura de cada seção do footer para caber cinco seções lado a lado */
+        color: #000000; /* Define a cor do texto como preto */
+    }
+
+    .footer-section-atendimento {
+        width: 120%; /* Define a largura de cada seção do footer para caber cinco seções lado a lado */
+        color: #000000; /* Define a cor do texto como preto */
+        font-size: 12px;
+    }
+    
+    .footer-section h3 {
+        font-size: 18px; /* Define o tamanho da fonte para o título da seção do footer */
+        font-weight: bold; /* Define o título em negrito */
+        margin-bottom: 10px; /* Adiciona um espaço inferior ao título */
+        color: RED;
+    }
+    
+    .footer-section ul {
+        list-style: none; /* Remove os marcadores padrão da lista */
+        padding: 0; /* Remove o preenchimento interno da lista */
+        margin: 0; /* Remove a margem da lista */
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 5px; /* Adiciona um espaço inferior entre os itens da lista */
+    }
+    
+    .footer-section ul.social-media {
+        display: flex; /* Define a lista de redes sociais como flexível para alinhar os itens em linha */
+        gap: 10px; /* Define o espaço entre os itens de redes sociais */
+        flex-wrap: wrap; /* Permite que os itens de redes sociais quebrem para uma nova linha, se necessário */
+    }
+    
+    .footer-section ul.social-media li a {
+        color: black; /* Define a cor dos links de redes sociais como preto */
+        text-decoration: none; /* Remove a sublinhado dos links */
+        font-size: 13px; /* Define o tamanho da fonte dos ícones ou textos de redes sociais */
+    }
+    
+    .footer-section ul.social-media li a:hover {
+        color: #ccc; /* Muda a cor dos links para cinza claro ao passar o mouse */
+    }
+
+    .texto-final {        
+        color: var(--text-color);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-size: 1.0em;
+        font-weight: bold;
+        line-height: 1;
+        
+    }
+
+
+    .imagem-pagamento {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 50px;        
+    }
+
+    .encerramento {
+        color: var(--text-color);
+        text-align: center;
+        padding: 3px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-top: 10px; /* Espaçamento da parte superior */
+    }

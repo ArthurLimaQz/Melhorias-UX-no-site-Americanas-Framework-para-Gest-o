@@ -228,12 +228,12 @@
         <!-- Adicione mais cards aqui se necessário -->
     </div>
 
-    <button class="arrow2 left-arrow" onclick="scrollToLeft()">&#9664;</button> <!-- Seta esquerda -->    
+    <button class="arrow left-arrow" onclick="scrollToLeftOfertas()">&#9664;</button> <!-- Seta esquerda -->  
 
     <section id="ofertas" class="styled-section">
         <h2>Seleção de produtos patrocinados para você</h2>
         <p>Aproveite as ofertas exclusivas de hoje!</p>
-        <div class="product-container">
+        <div id="ofertas-container" class="product-container">
              <!-- Seleção de produtos patrocinados para você -->
          
                 <!-- Card de Produto 1 CONFIGURADO-->
@@ -309,17 +309,17 @@
 
     </section>
 
-    <button class="arrow2 right-arrow" onclick="scrollToRight()">&#9654;</button> <!-- Seta direita -->   
+    <button class="arrow right-arrow" onclick="scrollToRightOfertas()">&#9654;</button> <!-- Seta direita -->     
     
 </main>
 
 <!-- Promoções feitas sob medida para você! -->
 <main class="main-content">
-    <button class="arrow left-arrow" onclick="scrollToLeft()">&#9664;</button> <!-- Seta esquerda -->     
+    <button class="arrow2 left-arrow" onclick="scrollToLeftHome()">&#9664;</button> <!-- Seta esquerda -->       
     <section id="home" class="styled-section">
         <h2>Promoções feitas sob medida para você!</h2>
 
-        <div class="product-container">
+        <div id="home-container" class="product-container">
                 <!-- Card de Produto 1 CONFIGURADO-->
                 <a href="images/painel_suspenso.png" target="_blank" class="product-card-link">
                     <div class="product-card">
@@ -390,8 +390,7 @@
                 </div>
 
     </section>
-    <button class="arrow right-arrow" onclick="scrollToRight()">&#9654;</button> <!-- Seta direita -->      
-</main>
+    <button class="arrow2 right-arrow" onclick="scrollToRightHome()">&#9654;</button> <!-- Seta direita -->  
 <main class="main-content">
 
         <section id="serviços"class="styled-section">                
@@ -402,37 +401,37 @@
                 <!-- cliente ouro -->
 
                 <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/cliente_ouro.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/cliente_ouro.png" alt="Cliente Ouro" > 
                     <div class="card-name">Cliente Ouro</div>
                 </a>
                 <!-- cliente ouro -->
                 <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/cartão-americanas.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/cartão-americanas.png" alt="Cliente Ouro" >
                     <div class="card-name">Consulte sua Fatura Americanas</div>
                 </a>
                 <!-- cliente ouro -->    
                 <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/guia de segurança.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/guia de segurança.png" alt="Cliente Ouro" >
                     <div class="card-name">Guia de Segurança</div>
                 </a>
                  <!-- cliente ouro -->    
                  <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/DEVOLUÇÕES.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/DEVOLUÇÕES.png" alt="Cliente Ouro" >
                     <div class="card-name">Entregas e Devoluções</div>
                 </a> 
                  <!-- cliente ouro -->    
                  <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/lista de casamento.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/lista de casamento.png" alt="Cliente Ouro" >
                     <div class="card-name">Lista de Casamento</div>
                 </a> 
                  <!-- cliente ouro -->    
                  <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/empresa.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/empresa.png" alt="Cliente Ouro" >
                     <div class="card-name">Americanas Empresas</div>
                 </a>
                  <!-- cliente ouro -->    
                  <a href="images/sofa.png" target="_blank" class="card-link">
-                    <img src="images/vale presente.png" alt="Cliente Ouro" class="item-servico-imagem">
+                    <img src="images/vale presente.png" alt="Cliente Ouro" >
                     <div class="card-name">Vale Presente</div>
                 </a>  
 
@@ -440,19 +439,118 @@
         </section>
 
 </main>
-    <main class="main-content">
-           
-        <section id="contato">
-            <h2>Fale Conosco</h2>
-            <p>Entre em contato para mais informações ou dúvidas.</p>
-            <p>Email: atendimento@americanas.com</p>
-        </section>
+<main class="main-content">
+             
+        <section id="Departamentos" class="styled-section">
+            <div class="footer">
+                <div class="footer-section">                    
+                    <h3>Institucional</h3>
+                    <ul class="social-media">
+                        <li><a href="a">Investidores Americanas SA</a></li>
+                        <li><a href="a">Governança Corporativa</a></li>
+                        <li><a href="a">Lojas Americanas</a></li>
+                        <li><a href="a">Programa de Afiliados</a></li>
+                        <li><a href="a">Prêmios</a></li>
+                        <li><a href="a">Assessoria de Imprensa</a></li>
+                        <li><a href="a">Venda na Americanas</a></li>
+                        <li><a href="a">Trabalhe Conosco</a></li>
+                        <li><a href="a">Cadastro de Proteção à Propriedade Intelectual</a></li>
+                        <li><a href="a">Nossas Lojas</a></li>
+                        <li><a href="a">Eletrodomésticos</a></li>
+                        <li><a href="a">Canal de Denúncias</a></li>
+                    </ul>
+                </div>
 
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>A Americanas oferece uma ampla variedade de produtos e promoções para você economizar e aproveitar o melhor do mercado!</p>
+                <div class="footer-section">
+                    <h3>Dúvidas</h3>
+                    <ul class="social-media">
+                        <li><a href="a">Central de Atendimento</a></li>
+                        <li><a href="a">Trocas e Devoluções</a></li>
+                        <li><a href="a">Processo de Entrega</a></li>
+                        <li><a href="a">Aviso de Privacidade</a></li>
+                        <li><a href="a">Regras do Site</a></li>
+                        <li><a href="a">Guia de Segurança</a></li>
+                        <li><a href="a">Termos e Condições de Compra e Venda de Produtos</a></li>
+                        <li><a href="a">Procon-RJ</a></li>
+                        <li><a href="a">Verifique o Código Anatel</a></li>
+                        <li><a href="a">Cupom de Desconto</a></li>
+                        <li><a href="a">Marketplace</a></li>
+                        <li><a href="a">Black Friday</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul class="social-media">
+                        <li><a href="a">Tipos de Entrega</a></li>
+                        <li><a href="a">Seguro Roubo e Furto</a></li>
+                        <li><a href="a">Serviços de Entrega - Direct</a></li>
+                        <li><a href="a">Instalação de Ar Condicionado</a></li>
+                        <li><a href="a">Garantia Estendida</a></li>
+                        <li><a href="a">Vale Presente</a></li>
+                        <li><a href="a">Para Empresas</a></li>
+                        <li><a href="a">Confira Todos</a></li>
+                        <li><a href="a">Código de Conduta e Ética</a></li>                        
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Acessibilidade</h3>
+                    <ul class="social-media">
+                        <li><a href="a">Acessibilidade</a></li>
+                    </ul>
+                    <h3>Minha Conta</h3>
+                    <ul class="social-media">
+                        <li><a href="a">Meus Pedidos</a></li>
+                        <li><a href="a">Cadastrar ou Remover Newsletter</a></li>
+                    </ul>
+                    <h3>Mídias Sociais</h3>
+                    <ul class="social-media">
+                        <li><a href="#"data-tooltip="intagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"data-tooltip="facebook"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"data-tooltip="twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"data-tooltip="youtube"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"data-tooltip="linkedin"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"data-tooltip="tiktok"><i class="fab fa-tiktok"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul class="footer-section-atendimento">
+                        <li>Horário de atendimento:</li>
+                        <li>08:00 às 20:00 - Segunda a Sexta,</li>
+                        <li>08:00 às 18:00 - Sábados </li>
+                        <li>(Exceto feriados nacionais)</li>
+                        <li>Endereço:</li>
+                        <li>Rua Sacadura Cabral, 102</li>
+                        <li>Rio de Janeiro, RJ - 20081-902</li>
+                    </ul>
+                    <h3>Central SAC:</h3>
+                    <ul class="social-media">
+                        <li><a href="#">Clique aqui</a></li>
+                    </ul>
+                </div>
+            </div>       
         </section>
-    </main>
+</main>
+<main class="main-content">
+        <section id="formas de Pagamento">
+            <div class="texto-final">Formas de Pagamento</div> 
+            <div class="container-servicos">           
+                <img  src="images/mastecard.png" class="imagem-pagamento">
+                <img  src="images/visa.png" class="imagem-pagamento">
+                <img  src="images/elo.png" class="imagem-pagamento">
+                <img  src="images/American Express.png" class="imagem-pagamento">
+                <img  src="images/Hipercard3.png" class="imagem-pagamento">
+                <img  src="images/boleto.png" class="imagem-pagamento">
+                <img  src="images/ame.png" class="imagem-pagamento">
+                <img  src="images/pix.png" class="imagem-pagamento">
+            </div>
+                      
+        </section>
+            <div class="encerramento">Todas as regras e promoções são válidas apenas para produtos vendidos e entregues pela Americanas.</div>
+            <div class="encerramento">O preço válido será o da finalização da compra.</div>
+            <div class="encerramento"> Havendo divergência, prevalecerá o menor preço ofertado.</div>
+        
+</main>
 
     
 
@@ -484,6 +582,3 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-
-
-

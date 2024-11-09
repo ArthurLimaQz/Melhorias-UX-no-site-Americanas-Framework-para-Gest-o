@@ -102,34 +102,66 @@ authButton.addEventListener("blur", function () {
     }, 200); // Pequena espera para permitir a interação com o modal
 });
 
-// SETA DO CONTEINER
-function scrollToLeft() {
-    const scrollAmount = 200; // Defina o valor de rolagem que preferir
-    const container = document.querySelector('.product-container');
-    container.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-    });
+// Função para rolar à direita no contêiner de "Ofertas"
+function scrollToRightOfertas() {
+    const ofertasContainer = document.getElementById("ofertas-container");
 
-    // Garantir que o botão de rolagem funcione ao atingir o limite da esquerda
-    if (container.scrollLeft <= 0) {
-        container.scrollLeft = container.scrollWidth - container.clientWidth; // Ajuste aqui para evitar erro
-    }
+    // Rolar com suavidade
+    ofertasContainer.scrollBy({ left: 200, behavior: 'smooth' });
+
+    // Verificar se atingiu o final e voltar ao início
+    setTimeout(() => {
+        if (ofertasContainer.scrollLeft + ofertasContainer.clientWidth >= ofertasContainer.scrollWidth) {
+            ofertasContainer.scrollLeft = 0;
+        }
+    }, 300); // Aguarde um tempo para que a rolagem termine
 }
 
-function scrollToRight() {
-    const scrollAmount = 200; // Defina o valor de rolagem que preferir
-    const container = document.querySelector('.product-container');
-    container.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
+// Função para rolar à esquerda no contêiner de "Ofertas"
+function scrollToLeftOfertas() {
+    const ofertasContainer = document.getElementById("ofertas-container");
 
-    // Garantir que o botão de rolagem funcione ao atingir o limite da direita
-    if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        container.scrollLeft = 0; // Ajuste para voltar ao começo
-    }
+    // Rolar com suavidade
+    ofertasContainer.scrollBy({ left: -200, behavior: 'smooth' });
+
+    // Verificar se atingiu o início e rolar para o final
+    setTimeout(() => {
+        if (ofertasContainer.scrollLeft <= 0) {
+            ofertasContainer.scrollLeft = ofertasContainer.scrollWidth - ofertasContainer.clientWidth;
+        }
+    }, 300);
 }
+
+// Função para rolar à direita no contêiner de "Home"
+function scrollToRightHome() {
+    const homeContainer = document.getElementById("home-container");
+
+    // Rolar com suavidade
+    homeContainer.scrollBy({ left: 200, behavior: 'smooth' });
+
+    // Verificar se atingiu o final e voltar ao início
+    setTimeout(() => {
+        if (homeContainer.scrollLeft + homeContainer.clientWidth >= homeContainer.scrollWidth) {
+            homeContainer.scrollLeft = 0;
+        }
+    }, 300);
+}
+
+// Função para rolar à esquerda no contêiner de "Home"
+function scrollToLeftHome() {
+    const homeContainer = document.getElementById("home-container");
+
+    // Rolar com suavidade
+    homeContainer.scrollBy({ left: -200, behavior: 'smooth' });
+
+    // Verificar se atingiu o início e rolar para o final
+    setTimeout(() => {
+        if (homeContainer.scrollLeft <= 0) {
+            homeContainer.scrollLeft = homeContainer.scrollWidth - homeContainer.clientWidth;
+        }
+    }, 300);
+}
+
 
 
 // Função para avançar para o próximo slide
@@ -219,31 +251,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("chatbot-box").style.display = "none";
 });
 
-// Promoções feitas sob medida para você!
-function scrollToLeft() {
-    const scrollAmount = 200; // Defina o valor de rolagem que preferir
-    const container = document.querySelector('.product-container');
-    container.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-    });
-
-    // Garantir que o botão de rolagem funcione ao atingir o limite da esquerda
-    if (container.scrollLeft <= 0) {
-        container.scrollLeft = container.scrollWidth - container.clientWidth; // Ajuste aqui para evitar erro
-    }
-}
-
-function scrollToRight() {
-    const scrollAmount = 200; // Defina o valor de rolagem que preferir
-    const container = document.querySelector('.product-container');
-    container.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
-
-    // Garantir que o botão de rolagem funcione ao atingir o limite da direita
-    if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        container.scrollLeft = 0; // Ajuste para voltar ao começo
-    }
-}
