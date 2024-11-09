@@ -913,3 +913,23 @@ a i {
     .hidden {
         display: none;
     }
+
+    .container-servicos {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .item-servico {
+        text-align: center;
+        width: 100px;
+        color: black;
+      }
+      
+      .item-servico-imagem img  {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+        align-items: center;
+      }
