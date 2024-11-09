@@ -629,6 +629,33 @@ a i {
         transform: scale(1.02);
     }
 
+/* Novo estilo das setas */
+.arrow2 {
+    position: absolute; /* Posicionamento relativo ao contêiner */
+    top: 125%; /* Centraliza verticalmente */
+    background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
+    color: black;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de hover com animação */
+.arrow2:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+
 
     /*novo conteiner---------------------------------------------*/
 
@@ -738,7 +765,10 @@ a i {
     border-radius: 5px; /* Arredonda os cantos do elemento em 5 pixels, proporcionando um visual mais suave e moderno. */
     height: 50px; /* Define a altura do elemento como 50 pixels. Isso pode ser usado para garantir que o elemento tenha uma altura uniforme, independente do conteúdo. */
     text-align: center;
-    line-height: 50px;
+    line-height: 20px;
+    width: 200px;
+    overflow-wrap: break-word; /* Quebra as palavras que excederem a largura */
+    word-wrap: break-word;     /* Para compatibilidade adicional, quebra as palavras */
 }
 
 .card:hover {
@@ -785,6 +815,9 @@ a i {
 .card-link {
     text-decoration: none; /* Remove sublinhado do link */
     color: inherit; /* Mantém a cor do texto definida no card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-container {
@@ -919,17 +952,4 @@ a i {
         justify-content: space-around;
         align-items: center;
         margin-top: 20px;
-      }
-      
-      .item-servico {
-        text-align: center;
-        width: 100px;
-        color: black;
-      }
-      
-      .item-servico-imagem img  {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 5px;
-        align-items: center;
       }

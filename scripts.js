@@ -218,3 +218,32 @@ function sendMessage() {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("chatbot-box").style.display = "none";
 });
+
+// Promoções feitas sob medida para você!
+function scrollToLeft() {
+    const scrollAmount = 200; // Defina o valor de rolagem que preferir
+    const container = document.querySelector('.product-container');
+    container.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
+
+    // Garantir que o botão de rolagem funcione ao atingir o limite da esquerda
+    if (container.scrollLeft <= 0) {
+        container.scrollLeft = container.scrollWidth - container.clientWidth; // Ajuste aqui para evitar erro
+    }
+}
+
+function scrollToRight() {
+    const scrollAmount = 200; // Defina o valor de rolagem que preferir
+    const container = document.querySelector('.product-container');
+    container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+
+    // Garantir que o botão de rolagem funcione ao atingir o limite da direita
+    if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+        container.scrollLeft = 0; // Ajuste para voltar ao começo
+    }
+}
