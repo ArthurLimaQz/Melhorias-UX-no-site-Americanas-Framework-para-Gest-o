@@ -229,25 +229,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Funções para abrir e fechar o chatbot //
+// Funções para abrir e fechar o chatbot
 function toggleChatbot() {
     const chatbotBox = document.getElementById("chatbot-box");
-    chatbotBox.style.display = chatbotBox.style.display === "none" ? "flex" : "none";
+    chatbotBox.style.display = chatbotBox.style.display === "flex" ? "none" : "flex";
 }
 
+// Função para enviar mensagem do usuário
 function sendMessage() {
     const inputField = document.getElementById("chatbot-input");
     const message = inputField.value.trim();
     if (message) {
         const chatContent = document.getElementById("chatbot-content");
-        chatContent.innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+        
+        // Adiciona a mensagem do usuário com as classes
+        chatContent.innerHTML += `<div class="message user"><strong>Você:</strong> ${message}</div>`;
+        
+        // Limpa o campo de entrada e rola para o final
         inputField.value = "";
-        chatContent.scrollTop = chatContent.scrollHeight;  // Rolagem para o final
+        chatContent.scrollTop = chatContent.scrollHeight;
+
+        // Resposta automática do bot (opcional, você pode personalizar)
+        setTimeout(() => {
+            botReply("Obrigado por sua mensagem! Em breve responderemos.");
+        }, 1000);
     }
 }
+
+// Função para exibir a resposta do bot
+function botReply(response) {
+    const chatContent = document.getElementById("chatbot-content");
+    
+    // Adiciona a resposta do bot com as classes
+    chatContent.innerHTML += `<div class="message bot"><strong>Bot:</strong> ${response}</div>`;
+    
+    // Rola para o final
+    chatContent.scrollTop = chatContent.scrollHeight;
+}
+
+// Adiciona evento para enviar mensagem ao pressionar "Enter"
+document.getElementById("chatbot-input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
 
 // Inicializa o chat como escondido ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("chatbot-box").style.display = "none";
 });
-
