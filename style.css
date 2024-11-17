@@ -436,6 +436,9 @@ a i {
     width: 300px; /* Largura fixa do modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o modal */
     transition: opacity 0.3s ease; /* Animação para suavizar a entrada */
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, 03%);
 }
 
 
@@ -474,10 +477,15 @@ a i {
     color: #ff0000;
     text-decoration: none;
     margin: 5px 0; /* Espaçamento entre links */
+    background-color: transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .auth-links a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+    text-decoration: none; /* Sublinha ao passar o mouse */
+    color: #cc0000;
+    background-color: #ffcccc;
 }
 .auth-buttons:hover .auth-modal,
 .auth-modal:hover {
@@ -493,6 +501,13 @@ a i {
     border-radius: 4px; /* Bordas levemente arredondadas */
 }
 
+.auth-modal button:focus,
+.auth-links a:focus {
+    outline: none; /* Remove borda padrão */
+    box-shadow: 0 0 4px rgba(255, 0, 0, 0.5); /* Opcional: adiciona sombra ao foco */
+}
+
+
 
     /* Estilo para o contêiner principal que alinha os cards horizontalmente */
     .product-container {
@@ -503,16 +518,17 @@ a i {
         padding: 1rem; /* Adiciona um pouco de espaço ao redor dos cards */
         background-color: #f5f5f5;
         margin: 0 auto; /* Centraliza o contêiner horizontalmente */   
-        overflow: hidden
+        overflow: hidden;
+        justify-content: space-between;
     }
 
     /* Estilo para cada card de produto */
     .product-card {
         background-color: #fff;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
-        width: 12.5rem;
-        padding: 0.8rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 15px;
         text-align: left;
         font-family: Arial, sans-serif;
         flex-shrink: 0;
@@ -522,12 +538,15 @@ a i {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        grid-template-rows: auto 1fr 1fr;
+        justify-items: start;
+        height: 350px;
     }
 
     /* Imagem do produto */
     .product-card img {
         width: 100%; /* Define a largura para 100% do container */
-        height: auto; /* Define uma altura fixa para uniformizar as imagens */
+        height: 145px; /* Define uma altura fixa para uniformizar as imagens */
         object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
         border-radius: 8px;
         display: block;
@@ -541,10 +560,15 @@ a i {
         color: #333;
         font-weight: bold;
         border-radius: 5px;
-        height: 50px;
-          
+        height: 50px; 
     }
     
+    /* Outros elementos continuam com tamanhos fixos */
+.product-price,
+.original-price,
+.product-juros {
+    font-size: 14px;
+}
 
     /* Avaliação do produto */
     .product-rating {
@@ -552,6 +576,11 @@ a i {
         font-size: 14px;
         padding: 3px;
         margin-top: 13px; /* Espaçamento da parte superior */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        height: 20px;
     }
 
     /* Preço */
@@ -639,7 +668,7 @@ a i {
 /* Novo estilo das setas */
 .arrow2 {
     position: absolute; /* Posicionamento relativo ao contêiner */
-    top: 125%; /* Centraliza verticalmente */
+    top: 110%; /* Centraliza verticalmente */
     background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
     color: black;
     width: 2rem;
